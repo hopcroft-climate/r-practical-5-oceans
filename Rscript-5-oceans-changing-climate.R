@@ -45,8 +45,8 @@ image.plot(lon, lat, thetao[,,1,1])
 #which image.plot won't like so let's reverse things:
 lat <-rev(lat)
 thetao<-thetao[,ncol(thetao):1,,]
-image.plot(lon, lat[180:1], thetao[,,1,1])
-image.plot(lon, lat[180:1], thetao[,,20,1])
+image.plot(lon, lat, thetao[,,1,1])
+image.plot(lon, lat, thetao[,,20,1])
 
 #So the first plot is surface ocean potential temperature. The second is level 20 from the surface - at approximatley ?
 #
@@ -148,7 +148,7 @@ nc_close(ncfile)
 ph<-ph[,ncol(ph):1,]
 ph_rcp85<-ph_rcp85[,ncol(ph_rcp85):1,]
 del_ph_rcp85_piControl<-ph_rcp85[,,] - ph[,,]
-image.plot(lon, lat, del_ph_rcp85_piControl[,,1],main="ocean ph",sub="RCP85-piControl", col = rev(brewer.pal(9, "RdBu")),asp=1,zlim=c(-0.5,0.5))
+image.plot(lon, lat, del_ph_rcp85_piControl[,,1],main="ocean ph",sub="RCP85-piControl", col = rev(brewer.pal(9, "RdBu")),zlim=c(-0.5,0.5))
 
 #What does this plot tell us about surface ocean pH in a 'businees-as-usual' future?
 
@@ -169,7 +169,7 @@ o2<-o2[,ncol(o2):1,]
 o2_rcp85<-o2_rcp85[,ncol(o2_rcp85):1,]
 
 del_o2_rcp85_piControl<-o2_rcp85[,,] - o2[,,]
-image.plot(lon, lat, del_o2_rcp85_piControl[,,1],main="ocean o2",sub="RCP85-piControl", col = rev(brewer.pal(9, "RdBu")),asp=1)
+image.plot(lon, lat, del_o2_rcp85_piControl[,,1],main="ocean o2",sub="RCP85-piControl", col = rev(brewer.pal(9, "RdBu")))
 
 
 #What does this plot tell us about surface ocean oxygen in a 'businees-as-usual' future?
